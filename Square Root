@@ -1,0 +1,29 @@
+package mywork;
+import java.util.*;
+
+public class Squareroot {
+public static void main(String[]args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter a Number : ");
+	int n = sc.nextInt();
+	int t=0;
+	if(n>=1) {
+	for(int i=1; i<=n; i++) {
+		if(i*i==n) {
+			System.out.println("Root Value is : " + i);
+			break;
+		}
+		if(i==n-1) {
+			 t=1;
+		}
+	}
+	}
+	else {
+		 t=1;
+	}
+	
+	if(t==1) {
+		System.out.println("Not a root number");
+	}
+}
+}
