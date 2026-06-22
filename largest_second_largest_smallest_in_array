@@ -1,0 +1,34 @@
+package mywork;
+import java.util.*;
+public class largest_second_largest_smallest_in_array {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the number of elements : ");
+		int n = sc.nextInt();
+		if(n<2) {
+			System.out.println("Enter Atleast 2 elements");
+		}
+		else {
+		System.out.println("Enter an Array : ");
+		int[] a = new int[n];
+		for(int i=0; i<n; i++) {
+			a[i]=sc.nextInt();
+		}
+		
+		for(int i=0; i<n; i++) {
+		for(int j=0; j<n-1; j++) {
+			 if(a[j]>a[j+1]) {
+				 int temp = a[j];
+				 a[j] = a[j+1];
+				 a[j+1] = temp;
+			 }
+		}
+		}
+		System.out.println("The Largest Number is "+a[n-1]);
+		System.out.println("The Second Largest Number is "+a[n-2]);
+		System.out.println("The Smallest Number is "+a[0]);
+	}
+	}
+}
