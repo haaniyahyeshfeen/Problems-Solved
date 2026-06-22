@@ -1,0 +1,46 @@
+package mywork;
+import java.util.*;
+
+public class Max_Sum_2D {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter The Number Of Rows : ");
+		int r = sc.nextInt();
+		System.out.println("Enter the Number of Columns : ");
+		int c = sc.nextInt();
+		
+		int[][] a = new int[r][c];
+		
+		System.out.println("Enter the numbers row by row : ");
+		for(int i=0; i<r; i++) {
+			for(int j=0; j<c; j++) {
+				a[i][j] = sc.nextInt();
+			}
+		}
+		
+		int[] count = new int[r];
+		
+		for(int i=0; i<r; i++) {
+			int sum=0;
+			for(int j=0; j<c; j++) {
+				sum+=a[i][j];
+			}
+			count[i]=sum;
+			System.out.println("Row "+i+" Sum ="+sum);
+		}
+        int max = count[0];
+        int ind = 0;
+		for(int i=0; i<r; i++) {
+			if(count[i]>=max) {
+				max=count[i];
+				ind = i;
+			}
+		}
+		System.out.println("Maximum Sum = "+max);
+		System.out.println("Row Number = "+ind);
+	}
+
+}
